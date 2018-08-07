@@ -5,7 +5,7 @@
     z-index: 1; /* Stay on top */
     top: 0; /* Stay at the top */
     left: 0;
-    background-color: #111; /* Black */
+    background-color: #3498db; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
 }
@@ -13,6 +13,7 @@
 .main {
     margin-left: 160px; /* Same as the width of the sidebar */
     padding: 0px 10px;
+    color: black;
 }
 
 .draw
@@ -21,8 +22,12 @@
     float: right;
     height: 600px;
     width: 600px;
-    background-color: rebeccapurple;
-
+    background-color: #3498db;
     bottom: 335px;
+    
+}
+
+body {
+    background-color: #95a5a6;
     
 }
