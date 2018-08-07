@@ -31,3 +31,13 @@ body {
     background-color: #95a5a6;
     
 }
+
+.square{
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
+#draw{
+    position: relative;
+}
