@@ -1,4 +1,4 @@
-const MAX = 550
+const MAX = 400
 let container = document.getElementById("draw")
 
 class Shape {
@@ -36,10 +36,32 @@ function randomVal (min,max){
 
 
 document.getElementById("rec").addEventListener("click", function () {
-    insertSquare()
+    
     let t = document.createTextNode(`${"This is a rectangle"}`)
     document.getElementById("side").appendChild(t)
 });
+
+document.getElementById("sq").addEventListener("click", function () {   
+    insertSquare()
+    let t = document.createTextNode(`${"This is a square"}`)
+    document.getElementById("side").appendChild(t)
+});
+
+
+
+document.getElementById("circ").addEventListener("click", function () {
+    let t = document.createTextNode(`${"This is a circle"}`)
+    document.getElementById("side").appendChild(t)
+   
+});
+
+
+document.getElementById("tri").addEventListener("click", function () {
+    let t = document.createTextNode(`${"This is a triangle"}`)
+    document.getElementById("side").appendChild(t)    
+});
+
+
 
 
 
