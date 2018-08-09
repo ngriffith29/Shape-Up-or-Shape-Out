@@ -10,9 +10,15 @@ class Shape {
         this.height = height;
         this.width = width;
         this.div = document.createElement('div');
-        this.div.classList.add('square');
-        this.updateColor();
+        this.div.classList.add('square');        
         this.draw();
+        this.div.addEventListener('dblclick', function (){
+          this.remove()         
+        })
+        this.div.addEventListener("click", function (){
+            let t = document.createTextNode(`${MAX}`)
+            document.getElementById("side").appendChild(t)
+        })
     }
 
     draw() {
@@ -23,23 +29,24 @@ class Shape {
         this.div.style.width = `${this.width}px`;
         this.div.style.left = `${x}px`;
         this.div.style.top = `${y}px`;
+       
     }
 
-    updateColor(){
-        let randmColor = `rgb(${randomVal(0,255)},${randomVal(0,255)}, ${randomVal(0,255)}`
-        this.div.style.backgroundColor = randmColor;
-    }
+  
 }
 
 class Rectangle extends Shape {
-    constructor(height, width) {
-        super(height, width);
+    constructor(height, width,color) {
+        super(height, width,color);
+        this.div.style.backgroundColor = "green";
     }
+    
 }
 
 class Square extends Shape {
     constructor(pizza) {
         super(pizza, pizza);
+        this.div.style.backgroundColor = "red"
     }
 }
 
@@ -48,6 +55,7 @@ class Circle extends Shape {
         super(radius,radius);
         let border = radius/2;
         this.div.style.borderRadius = `${border}px`;
+        this.div.style.backgroundColor = "purple"
         
     }
 }
@@ -56,7 +64,7 @@ class Triangle extends Shape {
     constructor(Height){
         super(0,0);
         let border = Height*Height/2;
-        this.div.style.borderBottom = `${border}px solid red`;
+        this.div.style.borderBottom = `${border}px solid yellow`;
         this.div.style.borderLeft = `${border}px solid transparent`;
         this.div.style.backgroundColor = `transparent`
 
@@ -66,7 +74,7 @@ class Triangle extends Shape {
 
 //RECTANGLE
 document.getElementById("rec").addEventListener("click", function () {
-    
+    console.log('hi')
     let heighInput = document.getElementById("rec-height");
     let widthInput = document.getElementById("rec-width");
 
@@ -76,8 +84,7 @@ document.getElementById("rec").addEventListener("click", function () {
     let rectangle = new Rectangle(height, width);
 
     //ghetto console log
-    let t = document.createTextNode(`${"This is a rectangle"}`)
-    document.getElementById("side").appendChild(t)
+   
 });
 //SQUARE
 document.getElementById("sq").addEventListener("click", function () {   
