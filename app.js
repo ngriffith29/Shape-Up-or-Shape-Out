@@ -16,7 +16,7 @@ class Shape {
           this.remove()         
         })
         this.div.addEventListener("click", function (){
-            let t = document.createTextNode(`${MAX}`)
+            let t = document.createTextNode(`This shape has a height of ${height}px and a width of ${width}px`)
             document.getElementById("side").appendChild(t)
         })
     }
@@ -96,8 +96,7 @@ document.getElementById("sq").addEventListener("click", function () {
     let square = new Square(sideLength);
 
     //ghetto console log
-    let t = document.createTextNode(`${"This is a square"}`)
-    document.getElementById("side").appendChild(t)
+   
 });
 //CIRCLE
 document.getElementById("circ").addEventListener("click", function (){
